@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.5;
+  color: #f8f7f3;
+  background-color: #444144;
+  font-size: 17px;
+  -webkit-transition: all 600ms;
+  transition: all 600ms;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,55 @@
+$phone: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$l-desktop: 1200px;
+$line-height: 1.5;
+
+$subscribe-input-height: 6vh;
+
+$transparent: rgba(0, 0, 0, 0);
+
+$dark: #231f20;
+$dark-l-2: lighten(
+    $color: $dark,
+    $amount: 2,
+);
+$dark-l-4: lighten(
+    $color: $dark,
+    $amount: 4,
+);
+$dark-l-7: lighten(
+    $color: $dark,
+    $amount: 7,
+);
+
+$light: #f8f7f3;
+$primary: #d3b388;
+$secondary: #444144;
+$secondary-d-5: darken(
+    $color: $secondary,
+    $amount: 5,
+);
+
+@mixin phone {
+    @media (min-width: #{$phone}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin l-desktop {
+    @media (min-width: #{$l-desktop}) {
+        @content;
+    }
+}
