@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "icons";
+    src: url("../fonts/icons.eot?uqqdzo");
+    src: url("../fonts/icons.eot?uqqdzo#iefix") format("embedded-opentype"),
+        url("../fonts/icons.ttf?uqqdzo") format("truetype"),
+        url("../fonts/icons.woff?uqqdzo") format("woff"),
+        url("../fonts/icons.svg?uqqdzo#icons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="i-"],
+[class*=" i-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "icons" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.i-comment-bubble-icon:before {
+    content: "\e900";
+}
+.i-comment-icon:before {
+    content: "\e901";
+}
+.i-hamburger-icon:before {
+    content: "\e902";
+}
+.i-link-icon:before {
+    content: "\e903";
+}
+.i-link-icon-solid:before {
+    content: "\e904";
+}
+.i-logo:before {
+    content: "\e905";
+}
+.i-search-icon:before {
+    content: "\e906";
+}
+.i-tag-icon:before {
+    content: "\e907";
+}
