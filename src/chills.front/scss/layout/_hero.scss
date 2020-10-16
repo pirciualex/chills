@@ -1,15 +1,9 @@
 header {
     height: 50vh;
     color: #fff;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
     background: url("../img/ish.jpg") center center;
     background-size: cover;
 
-    // h1 {
-    //     z-index: 1000;
-    // }
     @include desktop() {
         height: 80vh;
     }

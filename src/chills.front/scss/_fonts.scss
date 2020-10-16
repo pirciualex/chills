@@ -1,3 +1,5 @@
+@import "variables";
+
 @font-face {
     font-family: "icons";
     src: url("../fonts/icons.eot?uqqdzo");
@@ -26,6 +28,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.i-facebook2:before {
+    content: "\ea91";
+}
+.i-instagram:before {
+    content: "\ea92";
+}
 .i-comment-bubble-icon:before {
     content: "\e900";
 }
@@ -43,6 +51,12 @@
 }
 .i-logo:before {
     content: "\e905";
+    font-weight: 900;
+    font-size: 1.3em;
+
+    @include desktop() {
+        font-size: 1.8em;
+    }
 }
 .i-search-icon:before {
     content: "\e906";

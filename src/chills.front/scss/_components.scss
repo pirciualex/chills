@@ -1,0 +1,315 @@
+// =================
+// 4.1 Container
+// =================
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include phone {
+        max-width: 540px;
+    }
+
+    @include tablet {
+        max-width: 720px;
+    }
+
+    @include desktop {
+        max-width: 960px;
+    }
+
+    @include l-desktop() {
+        max-width: 1140px;
+    }
+}
+
+// ======================
+// 4.2 Center elements
+// ======================
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// =========================
+// 4.3 Responsive images
+// =========================
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+// ===============
+// 4.5 Cards
+// ===============
+.card {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 0.25rem;
+    margin: 1rem 0;
+    box-shadow: 0.2rem 0.2rem 0.4rem $dark;
+    background-color: $dark-l-7;
+
+    @include phone {
+        margin: 1rem;
+    }
+
+    @include desktop {
+        margin: 1.25rem 1.5rem;
+    }
+}
+
+.card-img,
+.card-img-top {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.card-img,
+.card-img-bottom {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.btn {
+    border: solid;
+    color: $light;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+    transition: background-color 300ms, border-color 300ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: darken($color: $primary, $amount: 8);
+    border-color: darken($color: $primary, $amount: 8);
+}
+
+.btn-primary-outline {
+    background-color: $dark-l-2;
+    border-color: $dark-l-2;
+    transition: background-color 300ms, border-color 300ms;
+}
+
+.btn-outline-light {
+    background-color: $dark-l-4;
+    border-color: $dark-l-4;
+    transition: all 300ms;
+}
+
+.btn-primary-outline:hover,
+.btn-primary-outline:focus,
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.light-link {
+    color: $light;
+    transition: color 200ms;
+}
+
+.light-link:hover,
+.light-link:focus {
+    color: transparentize($color: $light, $amount: 0.2);
+}
+
+.primary-link {
+    color: $primary;
+    transition: color 200ms;
+}
+
+.primary-link:hover,
+.primary-link:focus {
+    color: transparentize($color: $primary, $amount: 0.2);
+}
+
+.title-link {
+    display: block;
+    margin: 1rem 0;
+
+    h2 {
+        font-weight: 400;
+    }
+}
+
+.title-link:hover,
+.title-link:focus {
+    color: $primary;
+}
+
+.img-link {
+    .img-fluid {
+        transition: all 500ms;
+        margin-bottom: -0.2rem;
+        padding-bottom: -0.2rem;
+    }
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-link:hover {
+    .img-fluid {
+        transform: scale(1.2);
+    }
+    .link-overlay {
+        transform: translateX(0);
+    }
+}
+
+.link-overlay {
+    background-color: transparentize($primary, 0.4);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    opacity: 0;
+    transition: 0.5s ease;
+
+    i {
+        background-color: $dark;
+        padding: 0.2em;
+        color: $light;
+        border-radius: 50%;
+        font-size: 3em;
+    }
+}
+
+.subscribe-input {
+    width: 100%;
+    height: $subscribe-input-height;
+    width: 80vw;
+    padding: 0 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 3rem;
+
+    @include tablet() {
+        width: 60vw;
+    }
+
+    @include desktop() {
+        width: 45vw;
+    }
+}
+
+.post-title {
+    text-decoration: none;
+}
+
+.post-title:hover,
+.post-title:focus {
+    color: darken($color: #000000, $amount: 0);
+}
+
+.icon {
+    width: 2rem;
+    color: $light;
+}
+
+.tag {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    margin-right: 0.3rem;
+}
+
+.tags,
+.comments,
+.comments-bubble {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tags::before,
+.comments::before,
+.comments-bubble::before {
+    display: block;
+    font-family: "icony";
+    margin: 0.1rem 0.5rem 0 0;
+    font-size: 1.2em;
+}
+
+.tags::before {
+    content: "\e906";
+}
+
+.comments::before {
+    content: "\e901";
+}
+
+.comments-bubble::before {
+    content: "\e900";
+}
+
+// typography
+.t-line {
+    display: block;
+    text-align: center;
+    font-size: 8.5vw;
+    letter-spacing: 0.1rem;
+    line-height: 8vh;
+
+    @include tablet() {
+        font-size: 6vw;
+        line-height: 6vh;
+    }
+
+    @include desktop() {
+        font-size: 5vw;
+        line-height: 9vh;
+    }
+
+    @include l-desktop() {
+        font-size: 4vw;
+        line-height: 10vh;
+    }
+}
+
+h1,
+h2 {
+    font-weight: 400;
+}
+
+h3 {
+    text-align: center;
+    font-size: 5vw;
+    margin-bottom: 2vh;
+
+    @include tablet() {
+        font-size: 3vw;
+    }
+
+    @include l-desktop() {
+        font-size: 1.5vw;
+    }
+}
+
+strong {
+    font-family: "Playfair Display", serif;
+}
+
+.r-margin {
+    margin-right: 450px;
+}
+
+.right {
+    transform: translateX(-450px);
+}
