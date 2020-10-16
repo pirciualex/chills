@@ -1,0 +1,112 @@
+footer {
+    min-height: 25vh;
+    background-color: $dark;
+
+    .features {
+        display: grid;
+        padding-top: 3rem;
+        padding-bottom: 1rem;
+
+        @include desktop() {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .desc,
+        .recent-posts,
+        .popular-tags {
+            margin: 1rem 0;
+
+            @include tablet() {
+                margin-right: 0.7rem;
+                margin-left: 0.7rem;
+            }
+
+            @include desktop() {
+                margin-right: 1.5rem;
+                margin-left: 1.5rem;
+            }
+        }
+
+        .recent-post {
+            display: grid;
+            align-items: center;
+            justify-content: space-between;
+            grid-template-columns: repeat(2, auto);
+            max-width: 60%;
+            margin: 1rem 0;
+
+            @media (min-width: 450px) {
+                max-width: 45%;
+            }
+            @include tablet() {
+                max-width: 35%;
+            }
+
+            @include desktop() {
+                max-width: 85%;
+            }
+
+            @include l-desktop() {
+                max-width: 75%;
+            }
+
+            img {
+                border-radius: 50%;
+                width: 6rem;
+                height: 6rem;
+                margin: 0;
+                padding: 0;
+            }
+
+            .img-link {
+                .img-fluid {
+                    transition: all 500ms;
+                }
+                display: block;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .img-link:hover {
+                .img-fluid {
+                    transform: scale(1);
+                }
+            }
+
+            .link-overlay {
+                border-radius: 50%;
+
+                i {
+                    padding: 0.4em;
+                    font-size: 1.2em;
+                }
+            }
+        }
+
+        h3 {
+            margin-bottom: 0.3rem;
+        }
+
+        .popular-tags div {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            margin: 0.5rem;
+            display: inline-block;
+            border-radius: 0.25rem;
+        }
+    }
+
+    .copy {
+        flex-direction: row;
+        text-align: center;
+        padding: 1.5rem 0;
+
+        .copy-text {
+            margin-left: 1rem;
+        }
+    }
+}

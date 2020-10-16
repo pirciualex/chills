@@ -469,3 +469,150 @@ nav .side-navbar-active {
     margin-right: 1rem;
   }
 }
+
+footer {
+  min-height: 25vh;
+  background-color: #231f20;
+}
+
+footer .features {
+  display: -ms-grid;
+  display: grid;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 992px) {
+  footer .features {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+footer .features .desc,
+footer .features .recent-posts,
+footer .features .popular-tags {
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  footer .features .desc,
+  footer .features .recent-posts,
+  footer .features .popular-tags {
+    margin-right: 0.7rem;
+    margin-left: 0.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  footer .features .desc,
+  footer .features .recent-posts,
+  footer .features .popular-tags {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+}
+
+footer .features .recent-post {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  max-width: 60%;
+  margin: 1rem 0;
+}
+
+@media (min-width: 450px) {
+  footer .features .recent-post {
+    max-width: 45%;
+  }
+}
+
+@media (min-width: 768px) {
+  footer .features .recent-post {
+    max-width: 35%;
+  }
+}
+
+@media (min-width: 992px) {
+  footer .features .recent-post {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer .features .recent-post {
+    max-width: 75%;
+  }
+}
+
+footer .features .recent-post img {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  margin: 0;
+  padding: 0;
+}
+
+footer .features .recent-post .img-link {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+footer .features .recent-post .img-link .img-fluid {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+footer .features .recent-post .img-link:hover .img-fluid {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+footer .features .recent-post .link-overlay {
+  border-radius: 50%;
+}
+
+footer .features .recent-post .link-overlay i {
+  padding: 0.4em;
+  font-size: 1.2em;
+}
+
+footer .features h3 {
+  margin-bottom: 0.3rem;
+}
+
+footer .features .popular-tags div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .features .tag {
+  font-size: 0.8rem;
+  margin: 0.5rem;
+  display: inline-block;
+  border-radius: 0.25rem;
+}
+
+footer .copy {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+footer .copy .copy-text {
+  margin-left: 1rem;
+}
