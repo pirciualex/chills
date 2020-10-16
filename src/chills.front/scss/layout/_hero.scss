@@ -1,0 +1,26 @@
+header {
+    height: 50vh;
+    color: #fff;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    background: url("../img/ish.jpg") center center;
+    background-size: cover;
+
+    // h1 {
+    //     z-index: 1000;
+    // }
+    @include desktop() {
+        height: 80vh;
+    }
+}
+
+.over {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to bottom right,
+        rgba(0, 47, 75, 0.4),
+        rgba(231, 223, 223, 0.4)
+    );
+}
