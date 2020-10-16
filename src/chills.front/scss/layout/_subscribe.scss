@@ -1,0 +1,57 @@
+.subscribe {
+    height: 50vh;
+
+    p {
+        margin-bottom: 5vh;
+    }
+
+    .t-line {
+        font-size: 6vw;
+        line-height: 4vh;
+        @include tablet() {
+        }
+
+        @include desktop() {
+            line-height: 5vh;
+        }
+
+        @include l-desktop() {
+            font-size: 3vw;
+            line-height: 8vh;
+        }
+    }
+
+    .sub-form {
+        input[type="email"],
+        input[type="submit"] {
+            padding: 0 $subscribe-input-height * 0.75;
+
+            @include tablet() {
+                font-size: 2vw;
+            }
+
+            @include l-desktop() {
+                font-size: 1vw;
+            }
+        }
+
+        input[type="email"] {
+            margin-bottom: 1.5rem;
+            background-color: $dark;
+            border-color: $dark;
+            color: $light;
+        }
+
+        input[type="submit"] {
+            height: $subscribe-input-height;
+        }
+
+        @include tablet() {
+            flex-direction: row;
+            input[type="email"] {
+                margin-bottom: 0;
+                margin-right: 1rem;
+            }
+        }
+    }
+}
