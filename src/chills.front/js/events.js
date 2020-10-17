@@ -2,6 +2,42 @@
  * This class adds event listeners to various UI elements as needed
  */
 export class Events {
+  imageLinksEvent() {
+    let imgLinks = document.querySelectorAll(".img-link");
+    imgLinks.forEach((link) => {
+      link.addEventListener("mouseenter", () => {
+        let overlay = document.createElement("div");
+        overlay.className = "link-overlay center";
+        overlay.innerHTML = `<i class="i-link"></i>`;
+        link.appendChild(overlay);
+        for (let i = 0; i < 1; i += 0.1) {
+          // setTimeout(setOpacity(i, el), 3000);
+          setTimeout(() => {
+            overlay.style.opacity = i;
+            // console.log(overlay);
+          }, 100);
+        }
+        // clearInterval();
+        // fadeIn(overlay);
+      });
+      link.addEventListener("mouseleave", () => {
+        for (let i = 1; i > 0; i -= 0.1) {
+          // setTimeout(setOpacity(i, el), 3000);
+          setTimeout(() => {
+            link.lastChild.style.opacity = i;
+            // alert("cleared");
+            // console.log(overlay);
+          }, 100);
+        }
+        // clearInterval();
+        setTimeout(() => {
+          link.removeChild(link.lastChild);
+          // alert("cleared");
+        }, 500);
+      });
+    });
+  }
+
   /**
   * An event listener for the search icon of the navbar
   */

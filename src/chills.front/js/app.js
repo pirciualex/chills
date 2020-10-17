@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", onload);
 function onload(e) {
   events.menuIconEvent();
   events.searchIconEvent();
+  events.imageLinksEvent();
 
   observer.observeHeader();
 }
