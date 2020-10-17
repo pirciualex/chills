@@ -6,4 +6,5 @@ document.addEventListener("DOMContentLoaded", onload);
 
 function onload(e) {
   events.menuIconEvent();
+  events.searchIconEvent();
 }
