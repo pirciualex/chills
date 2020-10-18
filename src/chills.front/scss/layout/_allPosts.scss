@@ -1,0 +1,28 @@
+.posts {
+    margin-bottom: 5vh;
+    display: grid;
+    grid-template-columns: auto;
+
+    @include phone {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    @include desktop {
+        grid-template-columns: repeat(3, auto);
+    }
+
+    hr {
+        margin: 1rem -1rem;
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .date {
+        margin-bottom: 0.7rem;
+        display: block;
+    }
+}

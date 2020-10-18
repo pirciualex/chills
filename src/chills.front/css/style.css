@@ -608,6 +608,49 @@ header {
   }
 }
 
+.posts {
+  margin-bottom: 5vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+@media (min-width: 576px) {
+  .posts {
+    -ms-grid-columns: (auto)[2];
+        grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (min-width: 992px) {
+  .posts {
+    -ms-grid-columns: (auto)[3];
+        grid-template-columns: repeat(3, auto);
+  }
+}
+
+.posts hr {
+  margin: 1rem -1rem;
+}
+
+.posts .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.posts .date {
+  margin-bottom: 0.7rem;
+  display: block;
+}
+
 footer {
   min-height: 25vh;
   background-color: #231f20;
