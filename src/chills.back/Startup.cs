@@ -30,6 +30,11 @@ namespace chills.back
             services.AddScoped<IPostRepository, PostRepository>();
             
             services.AddControllers();
+
+            services.AddCors(options => options.AddPolicy("all", builder =>
+            {
+                builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
+            }));
             
             services.AddDbContext<ChillsDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -43,6 +48,8 @@ namespace chills.back
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("all");
+            
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
