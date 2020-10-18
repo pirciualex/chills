@@ -8,7 +8,7 @@ export class Events {
       link.addEventListener("mouseenter", () => {
         let overlay = document.createElement("div");
         overlay.className = "link-overlay center";
-        overlay.innerHTML = `<i class="i-link"></i>`;
+        overlay.innerHTML = `<i class="i-link-icon"></i>`;
         link.appendChild(overlay);
         for (let i = 0; i < 1; i += 0.1) {
           // setTimeout(setOpacity(i, el), 3000);
