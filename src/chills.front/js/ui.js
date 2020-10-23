@@ -4,20 +4,20 @@ import { API } from "./api.js";
  * This class creates various UI elements
  */
 export class UI {
-    constructor(params) {
-        this.api = new API();
-    }
+  constructor() {
+    this.api = new API();
+  }
 
-    /**
+  /**
      * Renders the top posts present on the home page
      */
-    async renderTopPosts() {
-        const posts = await this.api.getAllPosts();
-        const postsUrl = `${this.api.baseUrl}/posts`;
+  async renderTopPosts() {
+    const posts = await this.api.getAllPosts();
+    const postsUrl = `${this.api.baseUrl}/posts`;
 
-        const topPosts = document.createElement("div");
-        topPosts.className = "container top-posts";
-        topPosts.innerHTML = `
+    const topPosts = document.createElement("div");
+    topPosts.className = "container top-posts";
+    topPosts.innerHTML = `
     <div class="top-post">
         <a href="${postsUrl}/${posts[3].slug}" class="img-link">
             <img
@@ -30,8 +30,8 @@ export class UI {
                 ${this.formatDate(posts[3].createdAt)}
             </a>
             <a href="${postsUrl}/${
-            posts[3].slug
-        }" class="light-link title-link">
+      posts[3].slug
+    }" class="light-link title-link">
                 <h2>${posts[3].title}</h2>
             </a>
             <p>
@@ -58,8 +58,8 @@ export class UI {
                 ${this.formatDate(posts[3].createdAt)}
             </a>
             <a href="${postsUrl}/${
-            posts[4].slug
-        }" class="light-link title-link">
+      posts[4].slug
+    }" class="light-link title-link">
                 <h2>${posts[4].title}</h2>
             </a>
             <p>
@@ -86,21 +86,21 @@ export class UI {
         </a>
     </div>
     `;
-        return topPosts;
-    }
+    return topPosts;
+  }
 
-    /**
+  /**
      * Renders all posts on the home page
      */
-    async renderAllPosts() {
-        const posts = await this.api.getAllPosts();
-        const postsUrl = `${this.api.baseUrl}/posts`;
+  async renderAllPosts() {
+    const posts = await this.api.getAllPosts();
+    const postsUrl = `${this.api.baseUrl}/posts`;
 
-        const allPosts = document.createElement("div");
-        allPosts.className = "container";
-        let postsHtml = "";
-        posts.forEach((p) => {
-            postsHtml += `
+    const allPosts = document.createElement("div");
+    allPosts.className = "container";
+    let postsHtml = "";
+    posts.forEach((p) => {
+      postsHtml += `
             <div class="card">
                 <a href="${postsUrl}/${p.slug}" class="img-link">
                     <img
@@ -109,9 +109,7 @@ export class UI {
                     />
                 </a>
                 <div class="card-body">
-                    <a href="${postsUrl}/${
-                p.slug
-            }" class="light-link title-link">
+                    <a href="${postsUrl}/${p.slug}" class="light-link title-link">
                         <h2>${p.title}</h2>
                     </a>
                     <a href="${postsUrl}/${p.slug}" class="light-link date">
@@ -127,30 +125,30 @@ export class UI {
                             <a href="#" class="tag light-link">tag2</a>
                         </div>
                         <span class="comments">
-                            <a href="${postsUrl}/${
-                p.slug
-            }" class="light-link">${p.comments}</a>
+                            <a href="${postsUrl}/${p.slug}" class="light-link">${p.comments}</a>
                         </span>
                     </div>
                 </div>
             </div>
             `;
-        });
+    });
 
-        allPosts.innerHTML = `
+    allPosts.innerHTML = `
         <h3>Here you will find something for you</h3>
         <div class="posts">
             ${postsHtml}
         </div>
         `;
 
-        return allPosts;
-    }
+    return allPosts;
+  }
 
-    formatDate(d) {
-        const date = new Date(d);
-        return `${date.getDate()} ${new Intl.DateTimeFormat("en-US", {
-            month: "long",
-        }).format(date)} ${date.getFullYear()}`;
-    }
+  formatDate(d) {
+    const date = new Date(d);
+    return `${date.getDate()} ${
+      new Intl.DateTimeFormat("en-US", {
+        month: "long",
+      }).format(date)
+    } ${date.getFullYear()}`;
+  }
 }

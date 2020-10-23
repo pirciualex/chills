@@ -1,22 +1,12 @@
-import { Events } from "./events.js";
 import { Observer } from "./observer.js";
-import { UI } from "./ui.js";
+import { Navigator } from "./navigator.js";
 
-const events = new Events();
 const observer = new Observer();
-const ui = new UI();
+const navigator = new Navigator();
 
 document.addEventListener("DOMContentLoaded", onload);
 
 async function onload(e) {
-    const topP = await ui.renderTopPosts();
-    const allP = await ui.renderAllPosts();
-    topPosts.appendChild(topP);
-    document.querySelector("#posts").appendChild(allP);
-
-    events.menuIconEvent();
-    events.searchIconEvent();
-    events.imageLinksEvent();
-
-    observer.observeHeader();
+  navigator.loadContent(window.location.pathname);
+  observer.observeHeader();
 }
