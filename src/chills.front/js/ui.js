@@ -6,6 +6,8 @@ import { API } from "./api.js";
 export class UI {
   constructor() {
     this.api = new API();
+    this.devPrefix = "/src/chills.front";
+    this.postsUrl = window.location.origin + this.devPrefix + "/post.html";
   }
 
   /**
@@ -13,23 +15,22 @@ export class UI {
      */
   async renderTopPosts() {
     const posts = await this.api.getAllPosts();
-    const postsUrl = `${this.api.baseUrl}/posts`;
 
     const topPosts = document.createElement("div");
     topPosts.className = "container top-posts";
     topPosts.innerHTML = `
     <div class="top-post">
-        <a href="${postsUrl}/${posts[3].slug}" class="img-link">
+        <a href="${this.postsUrl}#${posts[3].slug}" class="img-link">
             <img
                 class="img-fluid top-img"
                 src="${posts[3].imageURL}"
             />
         </a>
         <div class="top-content padding">
-            <a href="${postsUrl}/${posts[3].slug}" class="light-link">
+            <a href="${this.postsUrl}#${posts[3].slug}" class="light-link">
                 ${this.formatDate(posts[3].createdAt)}
             </a>
-            <a href="${postsUrl}/${
+            <a href="${this.postsUrl}#${
       posts[3].slug
     }" class="light-link title-link">
                 <h2>${posts[3].title}</h2>
@@ -54,10 +55,10 @@ export class UI {
 
     <div class="top-post">
         <div class="top-content padding">
-            <a href="${postsUrl}/${posts[4].slug}" class="light-link">
+            <a href="${this.postsUrl}#${posts[4].slug}" class="light-link">
                 ${this.formatDate(posts[3].createdAt)}
             </a>
-            <a href="${postsUrl}/${
+            <a href="${this.postsUrl}#${
       posts[4].slug
     }" class="light-link title-link">
                 <h2>${posts[4].title}</h2>
@@ -78,7 +79,7 @@ export class UI {
                 <a href="#" class="tag light-link">tag2</a>
             </div>
         </div>
-        <a href="${postsUrl}/${posts[4].slug}" class="img-link">
+        <a href="${this.postsUrl}#${posts[4].slug}" class="img-link">
             <img
                 class="img-fluid top-img"
                 src="${posts[4].imageURL}"
@@ -94,7 +95,6 @@ export class UI {
      */
   async renderAllPosts() {
     const posts = await this.api.getAllPosts();
-    const postsUrl = `${this.api.baseUrl}/posts`;
 
     const allPosts = document.createElement("div");
     allPosts.className = "container";
@@ -102,17 +102,17 @@ export class UI {
     posts.forEach((p) => {
       postsHtml += `
             <div class="card">
-                <a href="${postsUrl}/${p.slug}" class="img-link">
+                <a href="${this.postsUrl}#${p.slug}" class="img-link">
                     <img
                         class="img-fluid card-img-top"
                         src="${p.imageURL}"
                     />
                 </a>
                 <div class="card-body">
-                    <a href="${postsUrl}/${p.slug}" class="light-link title-link">
+                    <a href="${this.postsUrl}#${p.slug}" class="light-link title-link">
                         <h2>${p.title}</h2>
                     </a>
-                    <a href="${postsUrl}/${p.slug}" class="light-link date">
+                    <a href="${this.postsUrl}#${p.slug}" class="light-link date">
                         ${this.formatDate(p.createdAt)}
                     </a>
                     <p>
@@ -125,7 +125,7 @@ export class UI {
                             <a href="#" class="tag light-link">tag2</a>
                         </div>
                         <span class="comments">
-                            <a href="${postsUrl}/${p.slug}" class="light-link">${p.comments}</a>
+                            <a href="${this.postsUrl}#${p.slug}" class="light-link">${p.comments}</a>
                         </span>
                     </div>
                 </div>

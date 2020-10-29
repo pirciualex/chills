@@ -7,6 +7,9 @@ const navigator = new Navigator();
 document.addEventListener("DOMContentLoaded", onload);
 
 async function onload(e) {
-  navigator.loadContent(window.location.pathname);
+  navigator.loadContent(
+    window.location.pathname,
+    window.location.hash.substr(1),
+  );
   observer.observeHeader();
 }

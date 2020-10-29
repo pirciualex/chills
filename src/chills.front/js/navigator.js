@@ -26,7 +26,9 @@ export class Navigator {
       this.events.imageLinksEvent();
     } else if (location.includes("/post.html")) {
       this.events.menuIconEvent();
+      this.events.imageLinksEvent();
       this.events.searchIconEvent();
+      console.log(hash);
     }
   }
 }

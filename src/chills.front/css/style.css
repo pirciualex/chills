@@ -421,7 +421,7 @@ nav .side-navbar-active {
   }
 }
 
-header {
+.hero {
   height: 50vh;
   color: #fff;
   background: url("../img/ish.jpg") center center;
@@ -429,7 +429,7 @@ header {
 }
 
 @media (min-width: 992px) {
-  header {
+  .hero {
     height: 80vh;
   }
 }
