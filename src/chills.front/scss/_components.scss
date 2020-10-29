@@ -44,7 +44,7 @@
 }
 
 // ===============
-// 4.5 Cards
+// 4.4 Cards
 // ===============
 .card {
     border: 1px solid rgba(0, 0, 0, 0.25);
@@ -77,6 +77,10 @@
 .card-body {
     padding: 1rem;
 }
+
+// ================
+// 4.5 Buttons
+// ================
 
 .btn {
     border: solid;
@@ -118,6 +122,9 @@
     border-color: $primary;
 }
 
+// ===============
+// 4.6 Links
+// ===============
 .light-link {
     color: $light;
     transition: color 200ms;

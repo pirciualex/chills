@@ -1,0 +1,34 @@
+#post {
+    @include desktop() {
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+    aside {
+        padding: 3rem 0;
+
+        .tags {
+            display: flex;
+            justify-content: center;
+
+            &::before {
+                margin: 0 0.5rem 0.5rem 0;
+            }
+            div {
+                display: flex;
+                flex-wrap: wrap;
+
+                .tag {
+                    margin: 0.5rem;
+                }
+            }
+        }
+        .advertisement {
+            width: 40vh;
+            height: 40vh;
+            margin: 0 auto;
+            background-color: $light;
+            color: $dark;
+            content: "da";
+        }
+    }
+}
