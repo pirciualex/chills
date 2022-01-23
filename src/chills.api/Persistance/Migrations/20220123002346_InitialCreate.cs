@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace chills.back.Persistance.Migrations
+namespace chills.api.Persistance.Migrations
 {
     public partial class InitialCreate : Migration
     {
@@ -11,15 +11,14 @@ namespace chills.back.Persistance.Migrations
                 name: "Posts",
                 columns: table => new
                 {
-                    PostID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1000, 1"),
+                    PostID = table.Column<Guid>(nullable: false),
                     Slug = table.Column<string>(nullable: false),
                     Title = table.Column<string>(nullable: false),
                     ImageURL = table.Column<string>(nullable: true),
                     Description = table.Column<string>(maxLength: 500, nullable: false),
                     Content = table.Column<string>(nullable: false),
-                    CreatedAt = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 10, 7, 1, 29, 40, 943, DateTimeKind.Local).AddTicks(9981)),
-                    UpdatedAt = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 10, 7, 1, 29, 40, 950, DateTimeKind.Local).AddTicks(6733))
+                    CreatedAt = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2022, 1, 23, 2, 23, 46, 34, DateTimeKind.Local).AddTicks(5843)),
+                    UpdatedAt = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2022, 1, 23, 2, 23, 46, 36, DateTimeKind.Local).AddTicks(8832))
                 },
                 constraints: table =>
                 {
@@ -30,10 +29,9 @@ namespace chills.back.Persistance.Migrations
                 name: "Comment",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(nullable: false),
                     ParentId = table.Column<int>(nullable: false),
-                    ParentPostId = table.Column<int>(nullable: true)
+                    ParentPostId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {

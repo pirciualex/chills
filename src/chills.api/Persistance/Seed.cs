@@ -21,6 +21,7 @@ namespace chills.back.Persistance
             {
                 new Post
                 {
+                    Id = Guid.Parse("137d9215-ca1e-4e6c-8561-9f3483516041"),
                     Title = "The very first post on this blog",
                     Slug = "the-very-first-post-on-this-blog",
                     ImageURL =
@@ -31,6 +32,7 @@ namespace chills.back.Persistance
                 },
                 new Post
                 {
+                    Id = Guid.Parse("8410b5d5-8f8f-47eb-86c6-f951456a4e19"),
                     Title = "The second post",
                     Slug = "the-second-post",
                     ImageURL =
@@ -41,6 +43,7 @@ namespace chills.back.Persistance
                 },
                 new Post
                 {
+                    Id = Guid.Parse("cae5627a-5875-439a-a4de-dcd413431c8d"),
                     Title = "Odd is good",
                     Slug = "odd-is-good",
                     ImageURL = "https://cdn.pixabay.com/photo/2015/06/02/01/19/man-794514_960_720.jpg",
@@ -50,6 +53,7 @@ namespace chills.back.Persistance
                 },
                 new Post
                 {
+                    Id = Guid.Parse("a26068e8-e6d5-4814-8c44-b7f5fc3a22ea"),
                     Title = "Don't you feel confused sometimes?",
                     Slug = "don't-you-feel-confused-sometimes",
                     ImageURL =
@@ -61,6 +65,7 @@ namespace chills.back.Persistance
                 },
                 new Post
                 {
+                    Id = Guid.Parse("f26b6bd9-d73d-4a60-ab74-d69b1a732afd"),
                     Title = "Back and forth",
                     Slug = "back-and-forth",
                     ImageURL =

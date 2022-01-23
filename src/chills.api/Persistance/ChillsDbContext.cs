@@ -16,9 +16,7 @@ namespace chills.back.Persistance
         {
             modelBuilder.Entity<Post>(b =>
             {
-                b.Property(p => p.Id)
-                    .UseIdentityColumn(1000, 1)
-                    .HasColumnName("PostID");
+                b.Property(p => p.Id).HasColumnName("PostID");
                 b.HasIndex(p => p.Slug).IsUnique();
                 b.Property(p => p.Slug).IsRequired();
                 b.Property(p => p.Title).IsRequired();

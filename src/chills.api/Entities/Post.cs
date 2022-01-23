@@ -5,7 +5,7 @@ namespace chills.back.Entities
 {
     public class Post
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Slug { get; set; }
         public string Title { get; set; }
         public string ImageURL { get; set; }
