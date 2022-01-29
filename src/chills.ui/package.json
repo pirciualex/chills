@@ -1,0 +1,22 @@
+{
+  "name": "chills.ui",
+  "version": "1.0.0",
+  "description": "client app for the chills blog app",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --output-public-path=/dist/"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Alex Pirciu",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
