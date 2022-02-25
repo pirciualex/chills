@@ -2,11 +2,14 @@
  * This class adds event listeners to various UI elements as needed
  */
 export class Events {
+  /**
+   * Event listener for images overlay
+   */
   imageLinksEvent() {
-    let imgLinks = document.querySelectorAll(".img-link");
+    const imgLinks = document.querySelectorAll(".img-link");
     imgLinks.forEach((link) => {
       link.addEventListener("mouseenter", () => {
-        let overlay = document.createElement("div");
+        const overlay = document.createElement("div");
         overlay.className = "link-overlay center";
         overlay.innerHTML = `<i class="i-link-icon"></i>`;
         link.appendChild(overlay);
@@ -39,17 +42,17 @@ export class Events {
   }
 
   /**
-  * An event listener for the search icon of the navbar
-  */
+   * Event listener for the search icon of the navbar
+   */
   searchIconEvent() {
-    let searchIcon = document.querySelector("#search-icon");
+    const searchIcon = document.querySelector("#search-icon");
     searchIcon.addEventListener("click", () => {
       // document.querySelector(".search-form").style.display = "block";
       document
         .querySelector(".search-form")
         .classList.add("search-form-active");
     });
-    let closeSearch = document.querySelector("#close-search");
+    const closeSearch = document.querySelector("#close-search");
     closeSearch.addEventListener("click", () => {
       // document.querySelector(".search-form").style.display = "none";
       document
@@ -59,8 +62,8 @@ export class Events {
   }
 
   /**
-     * An event listener for the hamburger icon
-     */
+   * Event listener for the hamburger icon
+   */
   menuIconEvent() {
     const menuIcon = document.querySelector("#menu-icon");
     menuIcon.addEventListener("click", (e) => {
@@ -74,9 +77,7 @@ export class Events {
 
       if (window.innerWidth >= 992) {
         document.querySelector("body").classList.toggle("r-margin");
-        document
-          .querySelector(".main-navbar")
-          .classList.toggle("right");
+        document.querySelector(".main-navbar").classList.toggle("right");
       }
     });
   }

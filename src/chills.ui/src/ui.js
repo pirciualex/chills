@@ -10,9 +10,23 @@ export class UI {
     this.postsUrl = window.location.origin + this.devPrefix + "/post.html";
   }
 
+  async renderView(viewName) {
+    // debugger;
+    if (!viewName) {
+      console.log("404");
+    } else if (viewName === "/") {
+      viewName = "/home";
+    }
+    console.log(viewName.slice(1));
+    const response = await fetch(`./views/${viewName.slice(1)}.html`);
+    const view = await response.text();
+    document.querySelector("#main").innerHTML = view;
+    console.log(view);
+  }
+
   /**
-     * Renders the top posts present on the home page
-     */
+   * Renders the top posts present on the home page
+   */
   async renderTopPosts() {
     const posts = await this.api.getAllPosts();
 
@@ -91,8 +105,8 @@ export class UI {
   }
 
   /**
-     * Renders all posts on the home page
-     */
+   * Renders all posts on the home page
+   */
   async renderAllPosts() {
     const posts = await this.api.getAllPosts();
 
@@ -109,10 +123,14 @@ export class UI {
                     />
                 </a>
                 <div class="card-body">
-                    <a href="${this.postsUrl}#${p.slug}" class="light-link title-link">
+                    <a href="${this.postsUrl}#${
+        p.slug
+      }" class="light-link title-link">
                         <h2>${p.title}</h2>
                     </a>
-                    <a href="${this.postsUrl}#${p.slug}" class="light-link date">
+                    <a href="${this.postsUrl}#${
+        p.slug
+      }" class="light-link date">
                         ${this.formatDate(p.createdAt)}
                     </a>
                     <p>
@@ -125,7 +143,9 @@ export class UI {
                             <a href="#" class="tag light-link">tag2</a>
                         </div>
                         <span class="comments">
-                            <a href="${this.postsUrl}#${p.slug}" class="light-link">${p.comments}</a>
+                            <a href="${this.postsUrl}#${
+        p.slug
+      }" class="light-link">${p.comments}</a>
                         </span>
                     </div>
                 </div>
@@ -145,10 +165,8 @@ export class UI {
 
   formatDate(d) {
     const date = new Date(d);
-    return `${date.getDate()} ${
-      new Intl.DateTimeFormat("en-US", {
-        month: "long",
-      }).format(date)
-    } ${date.getFullYear()}`;
+    return `${date.getDate()} ${new Intl.DateTimeFormat("en-US", {
+      month: "long",
+    }).format(date)} ${date.getFullYear()}`;
   }
 }

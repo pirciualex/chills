@@ -14,10 +14,11 @@ export class API {
     const data = await response.json();
     return data;
   }
+
   /**
- * GET a single post by slug
- * @param {string} slug 
- */
+   * GET a single post by slug
+   * @param {string} slug
+   */
   async getSinglePost(slug) {
     const response = await fetch(`${this.baseUrl}/posts/${slug}`);
     const data = response.json();
